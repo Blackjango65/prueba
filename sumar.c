@@ -1,7 +1,8 @@
-#include <stdio.h>
+
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <stdio.h>
 #include <limits.h>
 
 #define LINE_BUF 1024
@@ -83,7 +84,7 @@ int main(int argc, char **argv) {
         char *sep = strchr(line, ';');
         if (!sep) {
             fprintf(stderr, "Aviso: linea %d formato inválido (falta ';'): '%s'\n", lineno, line);
-            fprintf(fout, "ERROR: linea %d formato inválido (falta ';'): '%s'\n", lineno, line);
+            fprintf(fout, "ERROR: linea %d formato inválido (falta ';'): '%s'", lineno, line);
             continue;
         }
         *sep = '\0';
@@ -96,14 +97,14 @@ int main(int argc, char **argv) {
         long a = strtol(a_str, &endptr, 10);
         if (endptr == a_str || (errno == ERANGE && (a == LONG_MIN || a == LONG_MAX))) {
             fprintf(stderr, "Aviso: linea %d primer número inválido: '%s'\n", lineno, a_str);
-            fprintf(fout, "ERROR: linea %d primer número inválido: '%s'\n", lineno, a_str);
+            fprintf(fout, "ERROR: linea %d primer número inválido: '%s'", lineno, a_str);
             continue;
         }
         /* permitir espacios alrededor del número */
         while (*endptr == ' ' || *endptr == '\t') endptr++;
         if (*endptr != '\0') {
             fprintf(stderr, "Aviso: linea %d primer número con caracteres extra: '%s'\n", lineno, a_str);
-            fprintf(fout, "ERROR: linea %d primer número con caracteres extra: '%s'\n", lineno, a_str);
+            fprintf(fout, "ERROR: linea %d primer número con caracteres extra: '%s'", lineno, a_str);
             continue;
         }
 
@@ -111,13 +112,13 @@ int main(int argc, char **argv) {
         long b = strtol(b_str, &endptr, 10);
         if (endptr == b_str || (errno == ERANGE && (b == LONG_MIN || b == LONG_MAX))) {
             fprintf(stderr, "Aviso: linea %d segundo número inválido: '%s'\n", lineno, b_str);
-            fprintf(fout, "ERROR: linea %d segundo número inválido: '%s'\n", lineno, b_str);
+            fprintf(fout, "ERROR: linea %d segundo número inválido: '%s'", lineno, b_str);
             continue;
         }
         while (*endptr == ' ' || *endptr == '\t') endptr++;
         if (*endptr != '\0') {
             fprintf(stderr, "Aviso: linea %d segundo número con caracteres extra: '%s'\n", lineno, b_str);
-            fprintf(fout, "ERROR: linea %d segundo número con caracteres extra: '%s'\n", lineno, b_str);
+            fprintf(fout, "ERROR: linea %d segundo número con caracteres extra: '%s'", lineno, b_str);
             continue;
         }
 

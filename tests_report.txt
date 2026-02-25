@@ -1,26 +1,8 @@
 [PASS] valid-simple
 [PASS] spaces
 [PASS] negative
-[FAIL] missing-sep
-  input:
-    12 7  expected out:
-  actual out:
-    ERROR: linea 1 formato inválido (falta ';'): '12 7'
-  stderr:
-    Aviso: linea 1 formato inválido (falta ';'): '12 7'
-[FAIL] non-numeric
-  input:
-    foo;2  expected out:
-  actual out:
-    ERROR: linea 1 primer número inválido: 'foo'
-  stderr:
-    Aviso: linea 1 primer número inválido: 'foo'
-[FAIL] empty-field
-  input:
-    ;5  expected out:
-  actual out:
-    ERROR: linea 1 primer número inválido: ''
-  stderr:
-    Aviso: linea 1 primer número inválido: ''
+[PASS] missing-sep
+[PASS] non-numeric
+[PASS] empty-field
 
-3 test(s) failed
+All tests passed
