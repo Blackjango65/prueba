@@ -1,0 +1,17 @@
+19
+0
+-2
+6
+ERROR: linea 6 formato inválido (falta ';'): '12 7'
+ERROR: linea 7 segundo número con caracteres extra: '2;3'
+ERROR: linea 8 primer número inválido: ''
+ERROR: linea 9 segundo número inválido: ''
+ERROR: linea 10 primer número inválido: 'foo'
+ERROR: linea 11 segundo número con caracteres extra: '3bar'
+1
+ERROR: linea 13 primer número con caracteres extra: '3.5'
+-9223372036854775808
+9223372036854775807
+9223372036854775807
+ERROR: linea 18 formato inválido (falta ';'): '   '
+ERROR: linea 19 primer número inválido: 'CRLF'
